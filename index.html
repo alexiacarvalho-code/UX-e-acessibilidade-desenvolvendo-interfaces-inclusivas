@@ -1,398 +1,325 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia de Segurança Digital - Melhor Idade</title>
-  
-  <!-- Tailwind CSS para estilização rápida, responsiva e acessível -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Fontes Google - Inter (Tipografia com máxima legibilidade) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    /* Estilização para acessibilidade de leitura */
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: #0f172a;
-      font-size: 1.1875rem; /* Fonte base aumentada (~19px) */
-      line-height: 1.7;
-    }
-
-    /* Oculta seta padrão do resumo sanfona no Chrome/Safari */
-    details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    /* Indicador visual de foco acessível para navegação por teclado e leitor de tela */
-    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
-      outline: 4px solid #f59e0b !important;
-      outline-offset: 3px;
-      border-radius: 0.5rem;
-    }
-
-    /* Checkboxes acessíveis e maiores para toque */
-    input[type="checkbox"] {
-      width: 2rem;
-      height: 2rem;
-      cursor: pointer;
-      accent-color: #0d9488;
-    }
-
-    /* Animação suave para pulsar botão de ajuda */
-    @keyframes pulse-subtle {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-    }
-    .animate-pulse-subtle {
-      animation: pulse-subtle 3s infinite ease-in-out;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Segurança e Direitos Digitais para a Terceira Idade</title>
+    <!-- Tailwind CSS CDN for Utility Styling -->
+    <script src="https://cdn.tailwindcss.com">
+      
+    </script>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col">
 
-  <!-- CABEÇALHO PRINCIPAL FIXO -->
-  <header class="bg-teal-900 text-white shadow-xl sticky top-0 z-50 border-b-4 border-amber-400">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <a href="#inicio" class="flex items-center space-x-3 text-white no-underline hover:text-amber-300 transition">
-        <span class="bg-amber-400 text-teal-950 p-2 rounded-2xl text-2xl md:text-3xl font-black shadow" aria-hidden="true">🛡️</span>
-        <div>
-          <span class="text-2xl md:text-3xl font-black tracking-wide block leading-tight">Guia Digital Seguro</span>
-          <span class="text-teal-200 text-sm md:text-base font-semibold block">Segurança e Direitos na Internet</span>
-        </div>
-      </a>
-      
-      <!-- Navegação Acessível -->
-      <nav aria-label="Navegação do Menu Principal">
-        <ul class="flex flex-wrap items-center gap-2 text-base md:text-lg">
-          <li>
-            <a href="#dicas" class="bg-teal-800 hover:bg-teal-700 text-white font-bold py-2 px-3 md:px-4 rounded-xl inline-block border border-teal-700 transition">
-              💡 Dicas
-            </a>
-          </li>
-          <li>
-            <a href="#direitos" class="bg-teal-800 hover:bg-teal-700 text-white font-bold py-2 px-3 md:px-4 rounded-xl inline-block border border-teal-700 transition">
-              ⚖️ Direitos
-            </a>
-          </li>
-          <li>
-            <a href="#golpes" class="bg-teal-800 hover:bg-teal-700 text-white font-bold py-2 px-3 md:px-4 rounded-xl inline-block border border-teal-700 transition">
-              🔍 Golpes
-            </a>
-          </li>
-          <li>
-            <a href="#ajuda" class="bg-red-600 hover:bg-red-700 text-white font-extrabold py-2 px-4 rounded-xl inline-block shadow-md transition">
-              🚨 Ajuda
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Accessibility Control Toggles (Pure CSS, No JS) -->
+    <input type="radio" name="font-size" id="font-normal" class="state-radio" checked>
+    <input type="radio" name="font-size" id="font-large" class="state-radio">
+    <input type="radio" name="font-size" id="font-huge" class="state-radio">
+    <input type="checkbox" id="toggle-contrast" class="state-radio">
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main id="inicio" class="max-w-5xl mx-auto px-4 py-6 flex-grow w-full space-y-10">
+    <div class="app-wrapper min-h-screen flex flex-col">
 
-    <!-- SEÇÃO INICIAL / BANNER DE BOAS-VINDAS COM BOTÃO DE AJUDA -->
-    <section class="bg-gradient-to-br from-teal-800 via-teal-900 to-slate-900 text-white rounded-3xl p-6 md:p-10 shadow-2xl border-4 border-teal-700 relative overflow-hidden">
-      <div class="relative z-10 max-w-3xl space-y-6">
-        
-        <div class="inline-flex items-center gap-2 bg-teal-700/80 text-amber-300 font-extrabold px-4 py-2 rounded-full text-base md:text-lg border border-teal-500">
-          <span>👵👨‍🦳 Feito especialmente para a Melhor Idade</span>
-        </div>
+        <!-- Top Accessibility Toolbar -->
+        <header class="sticky top-0 z-40 accessible-card border-x-0 border-t-0 shadow-lg">
+            <div class="max-w-7xl mx-auto p-3 sm:p-4 flex flex-wrap items-center justify-between gap-4">
+                
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl sm:text-4xl" aria-hidden="true">🛡️</span>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black tracking-wide">
+                            Segurança Digital Sênior
+                        </h1>
+                        <p class="text-xs sm:text-sm opacity-90 font-bold">Guia Acessível e Direitos na Internet</p>
+                    </div>
+                </div>
 
-        <h1 class="text-3xl md:text-5xl font-black leading-tight tracking-tight text-white">
-          Aprenda a usar a internet com <span class="text-amber-400 underline decoration-amber-400 decoration-4 underline-offset-8">total segurança e tranquilidade</span>
-        </h1>
+                <!-- Accessibility Controls -->
+                <nav aria-label="Controles de Acessibilidade" class="flex flex-wrap items-center gap-2">
+                    <span class="font-bold text-sm sm:text-base mr-1" id="font-label">Texto:</span>
+                    
+                    <label for="font-normal" class="btn-font-normal cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-600 font-bold hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+                        A <span class="sr-only">(Tamanho Normal)</span>
+                    </label>
+                    
+                    <label for="font-large" class="btn-font-large cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-600 font-bold text-lg hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+                        A+ <span class="sr-only">(Tamanho Grande)</span>
+                    </label>
+                    
+                    <label for="font-huge" class="btn-font-huge cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-600 font-bold text-xl hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+                        A++ <span class="sr-only">(Tamanho Muito Grande)</span>
+                    </label>
 
-        <p class="text-teal-100 text-xl md:text-2xl font-medium leading-relaxed">
-          Navegue pelo WhatsApp, redes sociais e aplicativos de banco de forma simples, protegendo seus dados e conhecendo seus direitos.
-        </p>
+                    <label for="toggle-contrast" class="btn-contrast cursor-pointer ml-1 sm:ml-2 px-3 py-2 rounded-lg border-2 border-slate-800 font-bold hover:bg-slate-200 min-h-[48px] flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <span aria-hidden="true">🌓</span> Alto Contraste
+                    </label>
+                </nav>
 
-        <!-- DESTAQUE BOTÃO DE AJUDA URGENTE -->
-        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-          <a href="#ajuda" class="animate-pulse-subtle bg-red-600 hover:bg-red-500 active:bg-red-700 text-white text-xl md:text-2xl font-black py-4 px-8 rounded-2xl shadow-2xl border-4 border-red-300 text-center flex items-center justify-center gap-3 transition transform hover:scale-105">
-            <span class="text-3xl" aria-hidden="true">🆘</span>
-            <span>PRECISA DE AJUDA AGORA? CLIQUE AQUI</span>
-          </a>
-
-          <a href="#dicas" class="bg-amber-400 hover:bg-amber-300 text-teal-950 text-xl font-extrabold py-4 px-6 rounded-2xl text-center shadow-lg transition">
-            Ver Dicas de Segurança 👇
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SEÇÃO 1: DICAS IMPORTANTES DE SEGURANÇA DIGITAL -->
-    <section id="dicas" class="scroll-mt-24 space-y-6">
-      
-      <div class="bg-amber-100 border-l-8 border-amber-500 rounded-2xl p-6 shadow-sm flex items-start gap-4">
-        <span class="text-4xl" aria-hidden="true">💡</span>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-amber-950">Dicas Importantes de Segurança</h2>
-          <p class="text-amber-900 text-lg">Práticas simples para deixar seu celular e computador protegidos no dia a dia.</p>
-        </div>
-      </div>
-
-      <!-- CARDS DE DICAS (SANFONA NATIVA HTML) -->
-      <div class="space-y-4">
-
-        <!-- DICA 1 -->
-        <details class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden group">
-          <summary class="p-6 bg-slate-50 hover:bg-teal-50 flex justify-between items-center cursor-pointer transition">
-            <div class="flex items-center gap-4">
-              <span class="bg-teal-100 text-teal-800 p-3 rounded-2xl text-3xl font-bold" aria-hidden="true">🔑</span>
-              <div>
-                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">1. Crie Senhas Fortes e Fáceis de Lembrar</h3>
-                <p class="text-slate-600 text-base">Evite datas de nascimento ou números em sequência.</p>
-              </div>
             </div>
-            <span class="text-teal-800 font-extrabold text-3xl group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="p-6 border-t-2 border-slate-200 bg-white space-y-4">
-            <p class="text-slate-800 text-lg">
-              Uma boa dica é juntar duas ou três palavras que você gosta mais um número e símbolo.
-            </p>
-            <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-              <strong class="text-blue-900 block font-extrabold mb-1">Exemplo de Senha Segura:</strong>
-              <code class="text-xl font-mono font-bold text-blue-950 bg-white px-3 py-1 rounded border border-blue-300 inline-block">CafeComLeite@2026</code>
-            </div>
-            <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-950">
-              📌 <strong>Onde guardar?</strong> Se precisar anotar, use um caderno em casa. Nunca guarde senhas no próprio celular ou em papéis na carteira.
-            </div>
-          </div>
-        </details>
+        </header>
 
-        <!-- DICA 2 -->
-        <details class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden group">
-          <summary class="p-6 bg-slate-50 hover:bg-teal-50 flex justify-between items-center cursor-pointer transition">
-            <div class="flex items-center gap-4">
-              <span class="bg-teal-100 text-teal-800 p-3 rounded-2xl text-3xl font-bold" aria-hidden="true">🔒</span>
-              <div>
-                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">2. Mantenha a Senha de Bloqueio do Celular</h3>
-                <p class="text-slate-600 text-base">Sua primeira defesa se o celular for perdido ou roubado.</p>
-              </div>
-            </div>
-            <span class="text-teal-800 font-extrabold text-3xl group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="p-6 border-t-2 border-slate-200 bg-white space-y-4">
-            <p class="text-slate-800 text-lg">
-              Sempre configure uma senha numérica (PIN), desenho ou impressão digital para acender a tela do aparelho.
-            </p>
-            <p class="text-slate-700">
-              Isso impede que desconhecidos vejam suas fotos, conversas de WhatsApp ou entrem em seus aplicativos de banco caso você esqueça o telefone em algum local.
-            </p>
-          </div>
-        </details>
+        <main class="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 flex-grow w-full space-y-10">
 
-        <!-- DICA 3 -->
-        <details class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden group">
-          <summary class="p-6 bg-slate-50 hover:bg-teal-50 flex justify-between items-center cursor-pointer transition">
-            <div class="flex items-center gap-4">
-              <span class="bg-teal-100 text-teal-800 p-3 rounded-2xl text-3xl font-bold" aria-hidden="true">📶</span>
-              <div>
-                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">3. Cuidado com Wi-Fi Público sem Senha</h3>
-                <p class="text-slate-600 text-base">Evite mexer no aplicativo do banco em redes abertas.</p>
-              </div>
-            </div>
-            <span class="text-teal-800 font-extrabold text-3xl group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="p-6 border-t-2 border-slate-200 bg-white space-y-4">
-            <p class="text-slate-800 text-lg">
-              Redes de Wi-Fi abertas em praças, ônibus ou shoppings podem ser monitoradas por pessoas mal-intencionadas.
-            </p>
-            <p class="text-slate-700">
-              Deixe para consultar o extrato ou fazer transferências Pix usando a internet da sua casa ou a sua rede móvel (4G/5G).
-            </p>
-          </div>
-        </details>
+            <!-- SECTION 1: HERO BANNER & BOTÃO DE AJUDA EM DESTAQUE -->
+            <section aria-labelledby="banner-titulo" class="accessible-card p-6 sm:p-8 md:p-10 bg-gradient-to-br from-blue-900 to-slate-900 text-white border-blue-900 shadow-xl relative overflow-hidden">
+                <div class="max-w-4xl space-y-6 relative z-10">
+                    
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-black text-sm uppercase bg-yellow-400 text-slate-900 border-2 border-yellow-500">
+                        <span>👵👴</span> Guia Oficial de Proteção
+                    </div>
 
-        <!-- DICA 4 -->
-        <details class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden group">
-          <summary class="p-6 bg-slate-50 hover:bg-teal-50 flex justify-between items-center cursor-pointer transition">
-            <div class="flex items-center gap-4">
-              <span class="bg-teal-100 text-teal-800 p-3 rounded-2xl text-3xl font-bold" aria-hidden="true">💬</span>
-              <div>
-                <h3 class="text-xl md:text-2xl font-extrabold text-slate-900">4. Ative a Confirmação em Duas Etapas no WhatsApp</h3>
-                <p class="text-slate-600 text-base">Uma camada extra de proteção contra clonagem do seu aplicativo.</p>
-              </div>
-            </div>
-            <span class="text-teal-800 font-extrabold text-3xl group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div class="p-6 border-t-2 border-slate-200 bg-white space-y-4">
-            <p class="text-slate-800 text-lg">
-              No WhatsApp, vá em: <strong>Configurações ➔ Conta ➔ Confirmação em duas etapas</strong>.
-            </p>
-            <p class="text-slate-700">
-              Você vai cadastrar um PIN de 6 dígitos que só você sabe. Isso impede que qualquer pessoa instale o seu WhatsApp em outro aparelho.
-            </p>
-          </div>
-        </details>
+                    <h2 id="banner-titulo" class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight text-white">
+                        Navegue na Internet com Confiança, Tranquilidade e Segurança
+                    </h2>
 
-      </div>
-    </section>
+                    <p class="text-lg sm:text-xl text-slate-100 font-medium max-w-3xl leading-relaxed">
+                        Aprenda a reconhecer golpes do dia a dia, proteger suas senhas e conhecer seus direitos garantidos por lei no ambiente virtual.
+                    </p>
 
-    <!-- SEÇÃO 2: DIREITOS NA INTERNET E GARANTIAS LEGAIS -->
-    <section id="direitos" class="scroll-mt-24 space-y-6">
-      
-      <div class="bg-emerald-100 border-l-8 border-emerald-600 rounded-2xl p-6 shadow-sm flex items-start gap-4">
-        <span class="text-4xl" aria-hidden="true">⚖️</span>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-950">Seus Direitos na Internet</h2>
-          <p class="text-emerald-900 text-lg">A lei protege o cidadão e garante prioridade e respeito ao público idoso.</p>
-        </div>
-      </div>
+                    <!-- PROMINENT HELP / SOS BUTTON -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        
+                        <a href="#modal-ajuda" class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl font-black text-xl bg-red-600 text-white hover:bg-red-700 active:bg-red-800 border-4 border-yellow-300 shadow-2xl transition-transform hover:scale-105 min-h-[64px] text-center" role="button">
+                            <span class="text-3xl animate-bounce" aria-hidden="true">🚨</span>
+                            <span>BOTÃO DE AJUDA URGENTE</span>
+                        </a>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <a href="#dicas-seguranca" class="inline-flex items-center justify-center gap-2 px-6 py-5 rounded-2xl font-bold text-lg bg-white text-slate-900 hover:bg-slate-100 border-2 border-white min-h-[64px] text-center">
+                            <span>👇</span> Ver Dicas de Segurança
+                        </a>
 
-        <!-- DIREITO 1 -->
-        <article class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 space-y-3">
-          <div class="flex items-center gap-3 text-emerald-800 font-extrabold text-xl">
-            <span class="bg-emerald-100 p-2 rounded-xl text-2xl">🔒</span>
-            <h3>Proteção de Dados Pessoais (LGPD)</h3>
-          </div>
-          <p class="text-slate-700">
-            Empresas, lojas e bancos são <strong>obrigados por lei</strong> a proteger seu CPF, telefone e endereço. Eles não podem vender nem repassar suas informações sem o seu consentimento livre e claro.
-          </p>
-        </article>
+                    </div>
 
-        <!-- DIREITO 2 -->
-        <article class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 space-y-3">
-          <div class="flex items-center gap-3 text-emerald-800 font-extrabold text-xl">
-            <span class="bg-emerald-100 p-2 rounded-xl text-2xl">👴</span>
-            <h3>Estatuto da Pessoa Idosa</h3>
-          </div>
-          <p class="text-slate-700">
-            A legislação assegura atendimento preferencial e prioritário. Se você tiver problemas em compras online ou nos aplicativos de bancos, a instituição tem o dever de oferecer atendimento acessível e presencial, se necessário.
-          </p>
-        </article>
+                    <p class="text-sm text-yellow-300 font-bold flex items-center gap-2 pt-1">
+                        <span aria-hidden="true">💡</span> Precisa de ajuda imediata ou suspeita de golpe? Clique no Botão de Ajuda acima.
+                    </p>
 
-        <!-- DIREITO 3 -->
-        <article class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 space-y-3">
-          <div class="flex items-center gap-3 text-emerald-800 font-extrabold text-xl">
-            <span class="bg-emerald-100 p-2 rounded-xl text-2xl">🏦</span>
-            <h3>Direito ao Ressarcimento Bancário</h3>
-          </div>
-          <p class="text-slate-700">
-            Se o banco não oferecer segurança adequada no sistema e houver movimentação indevida ou fraude sem a sua culpa, a Justiça determina que a instituição bancária deve devidamente investigar e ressarcir o cliente.
-          </p>
-        </article>
+                </div>
+            </section>
 
-        <!-- DIREITO 4 -->
-        <article class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-200 space-y-3">
-          <div class="flex items-center gap-3 text-emerald-800 font-extrabold text-xl">
-            <span class="bg-emerald-100 p-2 rounded-xl text-2xl">❌</span>
-            <h3>Direito de Arrependimento nas Compras</h3>
-          </div>
-          <p class="text-slate-700">
-            Comprou algo pela internet ou pelo telefone? O <strong>Código de Defesa do Consumidor</strong> garante <strong>7 dias de prazo</strong> após receber o produto para cancelar a compra e receber seu dinheiro de volta sem justificativa.
-          </p>
-        </article>
+            <!-- Quick Anchor Navigation -->
+            <nav aria-label="Navegação Rápida por Seção" class="accessible-card p-4 sm:p-6 space-y-3">
+                <h2 class="text-lg sm:text-xl font-extrabold flex items-center gap-2">
+                    <span>📌</span> Escolha o assunto que deseja consultar:
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    <a href="#dicas-seguranca" class="p-4 rounded-xl border-2 border-slate-400 font-bold hover:border-blue-700 hover:bg-blue-50 text-center flex items-center justify-center gap-2 min-h-[60px]">
+                        <span class="text-2xl" aria-hidden="true">💡</span>
+                        <span>1. Dicas de Segurança</span>
+                    </a>
+                    <a href="#direitos-internet" class="p-4 rounded-xl border-2 border-slate-400 font-bold hover:border-blue-700 hover:bg-blue-50 text-center flex items-center justify-center gap-2 min-h-[60px]">
+                        <span class="text-2xl" aria-hidden="true">⚖️</span>
+                        <span>2. Seus Direitos na Lei</span>
+                    </a>
+                    <a href="#identificar-golpes" class="p-4 rounded-xl border-2 border-slate-400 font-bold hover:border-blue-700 hover:bg-blue-50 text-center flex items-center justify-center gap-2 min-h-[60px]">
+                        <span class="text-2xl" aria-hidden="true">⚠️</span>
+                        <span>3. Como Evitar Golpes</span>
+                    </a>
+                </div>
+            </nav>
 
-      </div>
-    </section>
+            <!-- SECTION 2: DICAS IMPORTANTES SOBRE SEGURANÇA DIGITAL -->
+            <section id="dicas-seguranca" aria-labelledby="titulo-dicas" class="space-y-6">
+                
+                <div class="border-b-4 border-blue-800 pb-3">
+                    <h2 id="titulo-dicas" class="text-2xl sm:text-3xl font-black flex items-center gap-3">
+                        <span class="text-4xl" aria-hidden="true">💡</span>
+                        <span>1. Dicas Importantes de Segurança Digital</span>
+                    </h2>
+                    <p class="text-lg opacity-90 pt-1 font-medium">
+                        Hábitos simples para manter seu celular, conta bancária e redes sociais protegidos.
+                    </p>
+                </div>
 
-    <!-- SEÇÃO 3: COMO IDENTIFICAR GOLPES NO DIA A DIA -->
-    <section id="golpes" class="scroll-mt-24 space-y-6">
-      
-      <div class="bg-red-100 border-l-8 border-red-600 rounded-2xl p-6 shadow-sm flex items-start gap-4">
-        <span class="text-4xl" aria-hidden="true">🔍</span>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-red-950">Como Identificar Golpes no Dia a Dia</h2>
-          <p class="text-red-900 text-lg">Conheça os sinais mais comuns de fraude para não ser enganado.</p>
-        </div>
-      </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <p class="text-slate-700 text-xl font-medium">
-        Os golpistas costumam usar de apelo emocional, pressão por tempo ou falsas facilidades para enganar. Observe sempre a comparação abaixo:
-      </p>
+                    <!-- Tip Card 1 -->
+                    <article class="accessible-card p-6 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-blue-900">
+                                <span class="text-4xl" aria-hidden="true">🔑</span>
+                                <h3 class="text-xl font-bold">Crie Senhas com Frases Fáceis</h3>
+                            </div>
+                            <p>
+                                Evite colocar datas de nascimento ou números em sequência (como 123456). A melhor senha é uma frase simples que você gosta!
+                            </p>
+                            <div class="p-3 bg-blue-50 rounded-xl border-2 border-blue-300 text-slate-900">
+                                <strong class="block text-sm text-blue-900">Exemplo de Senha Forte:</strong>
+                                <span class="font-mono font-bold text-lg">EuAmoCafeComLeite#2026</span>
+                            </div>
+                        </div>
+                        <p class="text-sm font-bold text-slate-600 pt-2 border-t border-slate-300">
+                            🔒 Nunca anote senhas em papéis colados no celular.
+                        </p>
+                    </article>
 
-      <div class="space-y-6">
+                    <!-- Tip Card 2 -->
+                    <article class="accessible-card p-6 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-blue-900">
+                                <span class="text-4xl" aria-hidden="true">💬</span>
+                                <h3 class="text-xl font-bold">Proteja o seu WhatsApp</h3>
+                            </div>
+                            <p>
+                                Ative a <strong>Confirmação em Duas Etapas</strong> no WhatsApp. Isso impede que criminosos consigam usar sua conta em outro aparelho.
+                            </p>
+                            <div class="p-3 bg-blue-50 rounded-xl border-2 border-blue-300 text-slate-900">
+                                <strong class="block text-sm text-blue-900">Como ativar no WhatsApp:</strong>
+                                <span>Configurações ➔ Conta ➔ Confirmação em duas etapas ➔ Ativar.</span>
+                            </div>
+                        </div>
+                        <p class="text-sm font-bold text-slate-600 pt-2 border-t border-slate-300">
+                            🔒 Nunca passe o código que chegar por SMS para ninguém.
+                        </p>
+                    </article>
 
-        <!-- GOLPE 1: FALSO PARENTE NO WHATSAPP -->
-        <div class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden">
-          <div class="bg-slate-800 text-white p-4 px-6 font-extrabold text-xl md:text-2xl flex items-center gap-3">
-            <span>📱</span> 1. Golpe do "Novo Número do Filho ou Neto"
-          </div>
-          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-red-50 p-5 rounded-2xl border-2 border-red-200">
-              <strong class="text-red-900 text-xl font-black block mb-2">⚠️ Sinal de Alerta (É GOLPE):</strong>
-              <p class="text-red-950 text-lg">
-                Um número desconhecido manda mensagem com a foto do seu familiar dizendo: <em>"Troquei de número, me ajuda a pagar uma conta urgente pelo Pix?"</em>
-              </p>
-            </div>
-            <div class="bg-green-50 p-5 rounded-2xl border-2 border-green-200">
-              <strong class="text-green-900 text-xl font-black block mb-2">✅ Atitude Segura:</strong>
-              <p class="text-green-950 text-lg">
-                <strong>Não faça nenhuma transferência.</strong> Ligue para o número antigo da pessoa para confirmar se ela realmente trocou de telefone.
-              </p>
-            </div>
-          </div>
-        </div>
+                    <!-- Tip Card 3 -->
+                    <article class="accessible-card p-6 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-blue-900">
+                                <span class="text-4xl" aria-hidden="true">🔗</span>
+                                <h3 class="text-xl font-bold">Cuidado com Links de Mensagens</h3>
+                            </div>
+                            <p>
+                                Não clique em links recebidos por SMS, WhatsApp ou e-mail com promessas de prêmios, receitas médicas gratuitas ou recadastramento de banco.
+                            </p>
+                            <div class="p-3 bg-yellow-50 rounded-xl border-2 border-yellow-400 text-slate-900">
+                                <strong class="block text-sm text-yellow-900">Regra de Ouro:</strong>
+                                <span>Em caso de dúvida, não clique. Apague a mensagem imediatamente.</span>
+                            </div>
+                        </div>
+                        <p class="text-sm font-bold text-slate-600 pt-2 border-t border-slate-300">
+                            🔒 Bancos não mandam links por SMS para atualizar dados.
+                        </p>
+                    </article>
 
-        <!-- GOLPE 2: FALSA CENTRAL DO BANCO -->
-        <div class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden">
-          <div class="bg-slate-800 text-white p-4 px-6 font-extrabold text-xl md:text-2xl flex items-center gap-3">
-            <span>📞</span> 2. Falsa Ligação da "Central de Segurança do Banco"
-          </div>
-          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-red-50 p-5 rounded-2xl border-2 border-red-200">
-              <strong class="text-red-900 text-xl font-black block mb-2">⚠️ Sinal de Alerta (É GOLPE):</strong>
-              <p class="text-red-950 text-lg">
-                A pessoa liga dizendo que houve uma compra suspeita no seu cartão e pede para você ditar a sua senha ou fazer um "Pix de teste" para cancelar.
-              </p>
-            </div>
-            <div class="bg-green-50 p-5 rounded-2xl border-2 border-green-200">
-              <strong class="text-green-900 text-xl font-black block mb-2">✅ Atitude Segura:</strong>
-              <p class="text-green-950 text-lg">
-                <strong>Desligue imediatamente!</strong> O banco jamais pede sua senha por telefone e nunca pede para fazer transferências.
-              </p>
-            </div>
-          </div>
-        </div>
+                    <!-- Tip Card 4 -->
+                    <article class="accessible-card p-6 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-blue-900">
+                                <span class="text-4xl" aria-hidden="true">💳</span>
+                                <h3 class="text-xl font-bold">Use Cartão Virtual para Compras</h3>
+                            </div>
+                            <p>
+                                Quando for comprar na internet, acesse o aplicativo do seu banco e gere um <strong>Cartão Virtual</strong>.
+                            </p>
+                            <div class="p-3 bg-blue-50 rounded-xl border-2 border-blue-300 text-slate-900">
+                                <strong class="block text-sm text-blue-900">Por que é mais seguro?</strong>
+                                <span>O cartão virtual expira ou pode ser cancelado sem precisar trocar o cartão físico da sua carteira.</span>
+                            </div>
+                        </div>
+                        <p class="text-sm font-bold text-slate-600 pt-2 border-t border-slate-300">
+                            🔒 Confira se o site tem um desenho de cadeado ao lado do endereço.
+                        </p>
+                    </article>
 
-        <!-- GOLPE 3: LINKS DE PRÊMIOS OU INSS -->
-        <div class="bg-white rounded-2xl shadow-md border-2 border-slate-200 overflow-hidden">
-          <div class="bg-slate-800 text-white p-4 px-6 font-extrabold text-xl md:text-2xl flex items-center gap-3">
-            <span>🔗</span> 3. Mensagens com Links Promocionais ou de Recadastramento
-          </div>
-          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-red-50 p-5 rounded-2xl border-2 border-red-200">
-              <strong class="text-red-900 text-xl font-black block mb-2">⚠️ Sinal de Alerta (É GOLPE):</strong>
-              <p class="text-red-950 text-lg">
-                Mensagens de SMS ou e-mail com frases como: <em>"Você ganhou um prêmio do INSS"</em> ou <em>"Sua encomenda está retida, clique no link azul para liberar"</em>.
-              </p>
-            </div>
-            <div class="bg-green-50 p-5 rounded-2xl border-2 border-green-200">
-              <strong class="text-green-900 text-xl font-black block mb-2">✅ Atitude Segura:</strong>
-              <p class="text-green-950 text-lg">
-                <strong>Não clique no link!</strong> Apague a mensagem de texto logo em seguida para não apertar por engano.
-              </p>
-            </div>
-          </div>
-        </div>
+                </div>
 
-      </div>
-    </section>
+            </section>
 
-    <!-- SEÇÃO 4: BOTÃO DE AJUDA URGENTE E O QUE FAZER SE CAIR EM UM GOLPE -->
-    <section id="ajuda" class="scroll-mt-24 bg-red-50 rounded-3xl p-6 md:p-10 shadow-xl border-4 border-red-300 space-y-6">
-      
-      <div class="flex items-center gap-4 border-b-2 border-red-200 pb-4">
-        <span class="bg-red-700 text-white p-3 rounded-2xl text-4xl" aria-hidden="true">🚨</span>
-        <div>
-          <h2 class="text-3xl md:text-4xl font-black text-red-950">Caí em um golpe, o que fazer?</h2>
-          <p class="text-red-900 text-xl font-semibold">Mantenha a calma e siga estes passos sem perder tempo:</p>
-        </div>
-      </div>f
+            <!-- SECTION 3: DIREITOS NA INTERNET, LEIS E GARANTIAS -->
+            <section id="direitos-internet" aria-labelledby="titulo-direitos" class="space-y-6">
 
-      <div class="space-y-4">
+                <div class="border-b-4 border-blue-800 pb-3">
+                    <h2 id="titulo-direitos" class="text-2xl sm:text-3xl font-black flex items-center gap-3">
+                        <span class="text-4xl" aria-hidden="true">⚖️</span>
+                        <span>2. Direitos da Pessoa Idosa na Internet</span>
+                    </h2>
+                    <p class="text-lg opacity-90 pt-1 font-medium">
+                        Conheça as leis brasileiras que garantem sua proteção, privacidade e inclusão no meio digital.
+                    </p>
+                </div>
 
-        <div class="bg-white p-5 md:p-6 rounded-2xl border-2 border-red-200 shadow-sm flex items-start gap-4">
-          <span class="bg-red-700 text-white font-extrabold rounded-full w-10 h-10 flex items-center justify-center shrink-0 text-2xl">1</span>
-          <
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Law 1: Estatuto da Pessoa Idosa -->
+                    <article class="accessible-card p-6 space-y-4 border-l-8 border-l-blue-700">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-black uppercase bg-blue-100 text-blue-900 border border-blue-300">Lei Nº 10.741</span>
+                            <span class="text-3xl" aria-hidden="true">📜</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-blue-900">Estatuto da Pessoa Idosa</h3>
+                        <ul class="space-y-2 list-disc list-inside font-medium">
+                            <li><strong>Direito à Inclusão Digital:</strong> O poder público e a sociedade devem incentivar o acesso dos idosos às tecnologias.</li>
+                            <li><strong>Atendimento Prioritário:</strong> Serviços bancários e públicos virtuais devem oferecer canais simplificados e prioridade de suporte.</li>
+                            <li><strong>Proteção contra Abusos Financeiros:</strong> É crime induzir a pessoa idosa a contratar empréstimos ou repassar dados sem livre consentimento.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Law 2: LGPD -->
+                    <article class="accessible-card p-6 space-y-4 border-l-8 border-l-emerald-700">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-black uppercase bg-emerald-100 text-emerald-900 border border-emerald-300">Lei Nº 13.709</span>
+                            <span class="text-3xl" aria-hidden="true">🛡️</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-emerald-900">LGPD (Proteção de Dados)</h3>
+                        <ul class="space-y-2 list-disc list-inside font-medium">
+                            <li><strong>Privacidade do seu CPF e Nome:</strong> Empresas não podem vender seus dados para terceiros sem a sua autorização expressa.</li>
+                            <li><strong>Direito de Exclusão:</strong> Você tem o direito de exigir que empresas apaguem seus dados pessoais de cadastros e listas de chamadas.</li>
+                            <li><strong>Clareza nas Informações:</strong> Termos de uso de aplicativos devem ser escritos com linguagem simples e clara.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Law 3: CDC - Direito de Arrependimento -->
+                    <article class="accessible-card p-6 space-y-4 border-l-8 border-l-purple-700">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-black uppercase bg-purple-100 text-purple-900 border border-purple-300">Código do Consumidor</span>
+                            <span class="text-3xl" aria-hidden="true">🛍️</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-purple-900">Direito de Arrependimento (7 Dias)</h3>
+                        <ul class="space-y-2 list-disc list-inside font-medium">
+                            <li><strong>Devolução Garantida:</strong> Em qualquer compra feita na internet ou telefone, você tem até <strong>7 dias</strong> após receber o produto para desistir e receber todo o dinheiro de volta.</li>
+                            <li><strong>Sem Taxa de Cancelamento:</strong> A loja não pode cobrar frete de devolução nem multa de arrependimento.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Law 4: Marco Civil da Internet -->
+                    <article class="accessible-card p-6 space-y-4 border-l-8 border-l-amber-700">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-black uppercase bg-amber-100 text-amber-900 border border-amber-300">Lei Nº 12.965</span>
+                            <span class="text-3xl" aria-hidden="true">🌐</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-amber-900">Marco Civil da Internet</h3>
+                        <ul class="space-y-2 list-disc list-inside font-medium">
+                            <li><strong>Garantia de Conexão:</strong> Proteção contra a interrupção arbitrária do seu acesso à rede.</li>
+                            <li><strong>Inviolabilidade da Comunicação:</strong> Suas conversas e dados de navegação são sigilosos e protegidos pela Constituição Federal.</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- SECTION 4: COMO IDENTIFICAR POSSÍVEIS GOLPES NO DIA A DIA -->
+            <section id="identificar-golpes" aria-labelledby="titulo-golpes" class="space-y-6">
+
+                <div class="border-b-4 border-red-700 pb-3">
+                    <h2 id="titulo-golpes" class="text-2xl sm:text-3xl font-black flex items-center gap-3">
+                        <span class="text-4xl" aria-hidden="true">⚠️</span>
+                        <span>3. Como Identificar e Evitar Golpes no Dia a Dia</span>
+                    </h2>
+                    <p class="text-lg opacity-90 pt-1 font-medium">
+                        Veja quais são os golpes mais comuns cometidos contra pessoas idosas e como se proteger.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+
+                    <!-- Scam 1: Fake Family Member WhatsApp -->
+                    <article class="accessible-card p-6 space-y-4 border-red-400 bg-red-50 text-slate-900">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-red-200 pb-3">
+                            <h3 class="text-xl sm:text-2xl font-black text-red-900 flex items-center gap-2">
+                                <span>📱</span> Golpe 1: O "Falso Parente" no WhatsApp
+                            </h3>
+                            <span class="px-3 py-1 bg-red-200 text-red-900 rounded-full font-black text-xs">MUITO COMUM</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-lg text-red-950">Como acontece:</h4>
+                                <p>
+                                    Um criminoso pega a foto de um filho, neto ou parente seu e manda mensagem de um número desconhecido dizendo: <em>"Troquei de número, me adiciona!"</em>. Em seguida, diz que precisa pagar uma conta urgente e pede um Pix.
+                                </p>
+                            </div>
+                            <div class="p-4 bg-white rounded-xl border-2 border-red-300 space-y-2">
+                                <h4 class="font-black text-lg text-emerald-800 flex items-center gap-1">
+                                    <span>✅</span> O que fazer para se proteger

@@ -1,0 +1,100 @@
+        /* Base Accessibility Variables & Pure CSS Switches */
+        :root {
+            --font-scale: 1.15rem;
+            --bg-main: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #334155;
+            --border-color: #94A3B8;
+            --primary-blue: #1E3A8A;
+            --primary-hover: #1D4ED8;
+            --sos-red: #DC2626;
+            --sos-hover: #B91C1C;
+            --focus-ring: #2563EB;
+        }
+
+        /* Pure CSS High Contrast Theme Selector */
+        #toggle-contrast:checked ~ .app-wrapper {
+            --bg-main: #000000;
+            --bg-card: #121212;
+            --text-main: #FFFFFF;
+            --text-muted: #F1F5F9;
+            --border-color: #FFFFFF;
+            --primary-blue: #FACC15;
+            --primary-hover: #EAB308;
+            --focus-ring: #FACC15;
+        }
+
+        /* Pure CSS Font Size Scaling Options */
+        #font-normal:checked ~ .app-wrapper { --font-scale: 1.15rem; }
+        #font-large:checked ~ .app-wrapper { --font-scale: 1.35rem; }
+        #font-huge:checked ~ .app-wrapper { --font-scale: 1.60rem; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-size: var(--font-scale);
+            line-height: 1.7;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Enhanced High-Visibility Focus Outline for Keyboard and Screen Readers */
+        a:focus-visible, button:focus-visible, input:focus-visible, label:focus-visible {
+            outline: 4px solid var(--focus-ring) !important;
+            outline-offset: 4px !important;
+            border-radius: 8px;
+        }
+
+        .accessible-card {
+            background-color: var(--bg-card);
+            border: 3px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 1rem;
+        }
+
+        /* Pure CSS State Toggle Inputs (Hidden) */
+        .state-radio {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Active styling for controls */
+        #font-normal:checked ~ .app-wrapper .btn-font-normal,
+        #font-large:checked ~ .app-wrapper .btn-font-large,
+        #font-huge:checked ~ .app-wrapper .btn-font-huge,
+        #toggle-contrast:checked ~ .app-wrapper .btn-contrast {
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            border-color: var(--primary-blue);
+        }
+
+        #toggle-contrast:checked ~ .app-wrapper .btn-contrast {
+            color: #000000;
+        }
+
+        /* Pure CSS Modal overlay for Help SOS button */
+        .modal-sos {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-sos:target {
+            display: flex;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
