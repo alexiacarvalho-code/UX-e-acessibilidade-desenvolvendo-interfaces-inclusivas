@@ -6,7 +6,7 @@
     <title>Guia de Segurança Digital para a Melhor Idade</title>
     <!-- Tailwind CSS CDN for visual utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
 </head>
 <body class="min-h-screen">
 
@@ -18,6 +18,29 @@
 
     <!-- Main Container -->
     <div class="conteiner-aplicativo min-h-screen flex flex-col">
+
+        <section id="ajuda-emergencia" class="cartao-personalizado p-6 md:p-8 rounded-2xl space-y-4 border-2 border-red-300 bg-red-50 text-slate-900 shadow-sm">
+                <h3 class="text-2xl font-extrabold text-red-900 flex items-center gap-2">
+                    <span>🆘</span> Caiu em um golpe? Saiba o que fazer imediatamente:
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    <div class="p-4 bg-white rounded-xl border border-red-200">
+                        <div class="font-bold text-xl text-red-900">1. Avise seu Banco</div>
+                        <p class="text-sm pt-1">Ligue no número oficial atrás do seu cartão e peça o bloqueio do Pix ou cartão.</p>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-xl border border-red-200">
+                        <div class="font-bold text-xl text-red-900">2. Faça um B.O.</div>
+                        <p class="text-sm pt-1">Procure a Polícia Civil mais próxima ou faça um Boletim de Ocorrência na internet (Disque 190 para emergências).</p>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-xl border border-red-200">
+                        <div class="font-bold text-xl text-red-900">3. Avise os Familiares</div>
+                        <p class="text-sm pt-1">Avise seus contatos para que eles não respondam a mensagens vindas do seu nome.</p>
+                    </div>
+                </div>
+            </section>
 
         <!-- Accessibility Control Toolbar (Top Bar) -->
         <header class="sticky top-0 z-50 shadow-md cartao-personalizado border-t-0 border-x-0">
@@ -285,29 +308,6 @@
             </section>
 
             <!-- Emergency and Support Info -->
-            <section id="ajuda-emergencia" class="cartao-personalizado p-6 md:p-8 rounded-2xl space-y-4 border-2 border-red-300 bg-red-50 text-slate-900 shadow-sm">
-                <h3 class="text-2xl font-extrabold text-red-900 flex items-center gap-2">
-                    <span>🆘</span> Caiu em um golpe? Saiba o que fazer imediatamente:
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                    <div class="p-4 bg-white rounded-xl border border-red-200">
-                        <div class="font-bold text-xl text-red-900">1. Avise seu Banco</div>
-                        <p class="text-sm pt-1">Ligue no número oficial atrás do seu cartão e peça o bloqueio do Pix ou cartão.</p>
-                    </div>
-
-                    <div class="p-4 bg-white rounded-xl border border-red-200">
-                        <div class="font-bold text-xl text-red-900">2. Faça um B.O.</div>
-                        <p class="text-sm pt-1">Procure a Polícia Civil mais próxima ou faça um Boletim de Ocorrência na internet (Disque 190 para emergências).</p>
-                    </div>
-
-                    <div class="p-4 bg-white rounded-xl border border-red-200">
-                        <div class="font-bold text-xl text-red-900">3. Avise os Familiares</div>
-                        <p class="text-sm pt-1">Avise seus contatos para que eles não respondam a mensagens vindas do seu nome.</p>
-                    </div>
-                </div>
-            </section>
-
         </main>
 
         <!-- Footer -->
