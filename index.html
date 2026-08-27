@@ -1,353 +1,1077 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Guia de Segurança Digital para a Melhor Idade</title>
-    <!-- Tailwind CSS CDN for visual utility classes -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body class="min-h-screen">
 
-    <!-- Pure CSS Radio and Checkbox Controls for Accessibility Options -->
-    <input type="radio" name="font-size" id="fonte-normal" class="alternador-estado" checked>
-    <input type="radio" name="font-size" id="fonte-grande" class="alternador-estado">
-    <input type="radio" name="font-size" id="fonte-muito-grande" class="alternador-estado">
-    <input type="checkbox" id="alternar-contraste" class="alternador-estado">
+    <!-- ==========================================
+         CONTROLES INVISÍVEIS DE ACESSIBILIDADE
+         ========================================== -->
 
-    <!-- Main Container -->
+    <input
+        type="radio"
+        name="font-size"
+        id="fonte-normal"
+        class="alternador-estado"
+        checked
+    >
+
+    <input
+        type="radio"
+        name="font-size"
+        id="fonte-grande"
+        class="alternador-estado"
+    >
+
+    <input
+        type="radio"
+        name="font-size"
+        id="fonte-muito-grande"
+        class="alternador-estado"
+    >
+
+    <input
+        type="checkbox"
+        id="alternar-contraste"
+        class="alternador-estado"
+    >
+
+
+    <!-- ==========================================
+         CONTAINER PRINCIPAL
+         ========================================== -->
+
     <div class="conteiner-aplicativo min-h-screen flex flex-col">
 
-        <!-- Accessibility Control Toolbar (Top Bar) -->
+
+        <!-- ==========================================
+             CABEÇALHO
+             ========================================== -->
+
         <header class="sticky top-0 z-50 shadow-md cartao-personalizado border-t-0 border-x-0">
+
             <div class="max-w-6xl mx-auto p-4 flex flex-wrap items-center justify-between gap-4">
-                
-                <!-- Logo / Title -->
+
+
+                <!-- LOGO / TÍTULO -->
+
                 <div class="flex items-center gap-3">
-                    <span class="text-3xl" aria-hidden="true">🛡️</span>
+
+                    <span
+                        class="text-3xl"
+                        aria-hidden="true"
+                    >
+                        🛡️
+                    </span>
+
                     <h1 class="text-xl md:text-2xl font-bold tracking-wide">
                         Segurança Digital Segura
                     </h1>
+
                 </div>
 
-                <!-- Accessibility Controls (Font Size & Contrast Toggle) -->
-                <nav aria-label="Opções de Acessibilidade" class="flex flex-wrap items-center gap-2">
-                    <span class="font-bold text-sm md:text-base mr-1">Tamanho do Texto:</span>
-                    
-                    <label for="fonte-normal" id="btnTamanhoNormal" class="rotulo-normal cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+
+                <!-- ==========================================
+                     CONTROLES DE ACESSIBILIDADE
+                     ========================================== -->
+
+                <nav
+                    aria-label="Opções de Acessibilidade"
+                    class="flex flex-wrap items-center gap-2"
+                >
+
+                    <span class="font-bold text-sm md:text-base mr-1">
+                        Tamanho do Texto:
+                    </span>
+
+
+                    <!-- TAMANHO NORMAL -->
+
+                    <label
+                        for="fonte-normal"
+                        id="btnTamanhoNormal"
+                        class="rotulo-normal cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold hover:bg-blue-100 min-h-[48px] flex items-center justify-center"
+                        title="Usar tamanho normal"
+                    >
                         A (Normal)
                     </label>
-                    
-                    <label for="fonte-grande" id=" btnAumentaTexto" class="rotulo-grande cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold text-lg hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+
+
+                    <!-- TAMANHO GRANDE -->
+
+                    <label
+                        for="fonte-grande"
+                        id="btnAumentaTexto"
+                        class="rotulo-grande cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold text-lg hover:bg-blue-100 min-h-[48px] flex items-center justify-center"
+                        title="Aumentar o tamanho do texto"
+                    >
                         A+ (Grande)
                     </label>
-                    
-                    <label for="fonte-muito-grande" id="btnAumentaMais" class="rotulo-muito-grande cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold text-xl hover:bg-blue-100 min-h-[48px] flex items-center justify-center">
+
+
+                    <!-- TAMANHO MUITO GRANDE -->
+
+                    <label
+                        for="fonte-muito-grande"
+                        id="btnAumentaMais"
+                        class="rotulo-muito-grande cursor-pointer px-3 py-2 rounded-lg border-2 border-slate-400 font-bold text-xl hover:bg-blue-100 min-h-[48px] flex items-center justify-center"
+                        title="Usar texto muito grande"
+                    >
                         A++ (Muito Grande)
                     </label>
 
-                    <label for="alternar-contraste" class="rotulo-contraste cursor-pointer ml-2 px-3 py-2 rounded-lg border-2 border-slate-800 font-bold hover:bg-slate-200 min-h-[48px] flex items-center justify-center gap-2">
-                        <span aria-hidden="true">🌓</span> Alto Contraste
+
+                    <!-- ALTO CONTRASTE -->
+
+                    <label
+                        for="alternar-contraste"
+                        class="rotulo-contraste cursor-pointer ml-2 px-3 py-2 rounded-lg border-2 border-slate-800 font-bold hover:bg-slate-200 min-h-[48px] flex items-center justify-center gap-2"
+                        title="Ativar alto contraste"
+                    >
+                        <span aria-hidden="true">🌓</span>
+                        Alto Contraste
                     </label>
 
-                    <a href="#ajuda-emergencia" class="ml-2 px-4 py-2 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 min-h-[48px] flex items-center justify-center gap-2 shadow-sm transition-colors" title="Ir para ajuda de emergência">
-                        <span aria-hidden="true">🆘</span> Ajuda
+
+                    <!-- AJUDA -->
+
+                    <a
+                        href="#ajuda-emergencia"
+                        class="ml-2 px-4 py-2 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 min-h-[48px] flex items-center justify-center gap-2 shadow-sm transition-colors"
+                        title="Abrir ajuda de emergência"
+                    >
+                        <span aria-hidden="true">🆘</span>
+                        Ajuda
                     </a>
+
                 </nav>
+
             </div>
+
         </header>
+
+
+        <!-- ==========================================
+             CONTEÚDO PRINCIPAL
+             ========================================== -->
 
         <main class="max-w-6xl mx-auto p-4 md:p-6 flex-grow w-full space-y-8">
 
-            <!-- Hero Section -->
-            <section class="cartao-personalizado p-6 md:p-8 rounded-2xl shadow-sm text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <!-- ==========================================
+                 CONTROLE DE VOZ
+                 ========================================== -->
+
+            <section
+                class="cartao-personalizado p-5 rounded-2xl shadow-sm"
+                aria-label="Controle de voz"
+            >
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <span
+                            class="text-4xl"
+                            aria-hidden="true"
+                        >
+                            🔊
+                        </span>
+
+                        <div>
+
+                            <h2 class="text-xl md:text-2xl font-extrabold">
+                                Leitor de Voz
+                            </h2>
+
+                            <p class="text-base opacity-90">
+                                Ouça as informações do site para facilitar sua navegação.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex flex-wrap justify-center gap-2">
+
+                        <button
+                            id="btnLerSite"
+                            type="button"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold bg-blue-700 text-white hover:bg-blue-800 min-h-[52px] text-lg shadow-md"
+                            title="Ler as informações do site"
+                            aria-label="Ler as informações do site"
+                        >
+                            🔊 Ler o Site
+                        </button>
+
+
+                        <button
+                            id="btnPausarVoz"
+                            type="button"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold border-2 border-blue-700 hover:bg-blue-50 min-h-[52px] text-lg"
+                            title="Pausar a leitura"
+                            aria-label="Pausar a leitura"
+                        >
+                            ⏸️ Pausar
+                        </button>
+
+
+                        <button
+                            id="btnContinuarVoz"
+                            type="button"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold border-2 border-blue-700 hover:bg-blue-50 min-h-[52px] text-lg"
+                            title="Continuar a leitura"
+                            aria-label="Continuar a leitura"
+                        >
+                            ▶️ Continuar
+                        </button>
+
+
+                        <button
+                            id="btnPararVoz"
+                            type="button"
+                            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold bg-red-600 text-white hover:bg-red-700 min-h-[52px] text-lg shadow-md"
+                            title="Parar a leitura"
+                            aria-label="Parar a leitura"
+                        >
+                            ⏹️ Parar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 HERO
+                 ========================================== -->
+
+            <section
+                class="cartao-personalizado p-6 md:p-8 rounded-2xl shadow-sm text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6"
+            >
+
                 <div class="space-y-4 max-w-3xl">
+
                     <div class="inline-block px-4 py-1 rounded-full text-sm font-extrabold uppercase border border-blue-800 bg-blue-100 text-blue-900">
                         Guia Fácil e Prático
                     </div>
+
+
                     <h2 class="text-2xl md:text-4xl font-extrabold leading-tight">
                         Navegue na Internet com Tranquilidade e Segurança
                     </h2>
+
+
                     <p class="text-lg opacity-90">
                         Este site foi feito especialmente para ajudar você a identificar golpes, proteger seu dinheiro no celular e navegar na internet sem medo.
                     </p>
+
+
                     <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="#dicas-principais" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold bg-blue-700 text-white hover:bg-blue-800 min-h-[52px] text-lg shadow-md">
-                            <span>👇</span> Ver Dicas de Segurança
+
+                        <a
+                            href="#dicas-principais"
+                            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold bg-blue-700 text-white hover:bg-blue-800 min-h-[52px] text-lg shadow-md"
+                        >
+                            <span>👇</span>
+                            Ver Dicas de Segurança
                         </a>
-                        <a href="#checklist" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 border-blue-700 hover:bg-blue-50 min-h-[52px] text-lg">
-                            <span>✅</span> Testar Meus Hábitos
+
+
+                        <a
+                            href="#checklist"
+                            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold border-2 border-blue-700 hover:bg-blue-50 min-h-[52px] text-lg"
+                        >
+                            <span>✅</span>
+                            Testar Meus Hábitos
                         </a>
-                        <a href="#ajuda-emergencia" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold bg-red-600 text-white hover:bg-red-700 min-h-[52px] text-lg shadow-md">
-                            <span>🆘</span> Preciso de Ajuda
+
+
+                        <a
+                            href="#ajuda-emergencia"
+                            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold bg-red-600 text-white hover:bg-red-700 min-h-[52px] text-lg shadow-md"
+                        >
+                            <span>🆘</span>
+                            Preciso de Ajuda
                         </a>
+
                     </div>
+
                 </div>
-                <div class="text-7xl md:text-8xl p-4 bg-blue-50 rounded-full border-4 border-blue-200" aria-hidden="true">
+
+
+                <div
+                    class="text-7xl md:text-8xl p-4 bg-blue-50 rounded-full border-4 border-blue-200"
+                    aria-hidden="true"
+                >
                     👵👴
                 </div>
+
             </section>
 
-            <!-- Quick Jump Navigation -->
-            <section aria-label="Navegação Rápida por Assunto" class="space-y-3">
-                <h3 class="text-xl font-bold">Escolha um assunto para aprender:</h3>
+
+            <!-- ==========================================
+                 NAVEGAÇÃO RÁPIDA
+                 ========================================== -->
+
+            <section
+                aria-label="Navegação Rápida por Assunto"
+                class="space-y-3"
+            >
+
+                <h3 class="text-xl font-bold">
+                    Escolha um assunto para aprender:
+                </h3>
+
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    <a href="#whatsapp" class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center">
+
+                    <a
+                        href="#whatsapp"
+                        class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center"
+                    >
                         <span class="text-3xl" aria-hidden="true">💬</span>
                         <span>Golpes no WhatsApp</span>
                     </a>
-                    <a href="#bancos" class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center">
+
+
+                    <a
+                        href="#bancos"
+                        class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center"
+                    >
                         <span class="text-3xl" aria-hidden="true">🏦</span>
                         <span>Pix e Bancos</span>
                     </a>
-                    <a href="#senhas" class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center">
+
+
+                    <a
+                        href="#senhas"
+                        class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center"
+                    >
                         <span class="text-3xl" aria-hidden="true">🔑</span>
                         <span>Senhas Seguras</span>
                     </a>
-                    <a href="#compras" class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center">
+
+
+                    <a
+                        href="#compras"
+                        class="cartao-personalizado p-4 rounded-xl text-center hover:border-blue-600 font-bold flex flex-col items-center gap-2 shadow-sm min-h-[80px] justify-center"
+                    >
                         <span class="text-3xl" aria-hidden="true">🛍️</span>
                         <span>Compras Online</span>
                     </a>
+
                 </div>
+
             </section>
 
-            <!-- Golden Rules Banner -->
-            <section class="p-6 rounded-2xl border-4 border-amber-500 bg-amber-50 text-slate-900 space-y-4">
+
+            <!-- ==========================================
+                 3 REGRAS DE OURO
+                 ========================================== -->
+
+            <section
+                class="p-6 rounded-2xl border-4 border-amber-500 bg-amber-50 text-slate-900 space-y-4"
+            >
+
                 <h3 class="text-2xl font-extrabold flex items-center gap-3 text-amber-900">
-                    <span class="text-3xl" aria-hidden="true">🚨</span> 3 Regras de Ouro para sua Segurança
+
+                    <span
+                        class="text-3xl"
+                        aria-hidden="true"
+                    >
+                        🚨
+                    </span>
+
+                    3 Regras de Ouro para sua Segurança
+
                 </h3>
+
+
                 <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 font-semibold text-lg">
+
                     <li class="p-4 bg-white rounded-xl border border-amber-300 shadow-sm flex items-start gap-3">
-                        <span class="text-2xl" aria-hidden="true">1️⃣</span>
-                        <span><strong>NUNCA</strong> envie dinheiro por pedido no WhatsApp sem ligar para a pessoa antes.</span>
+
+                        <span
+                            class="text-2xl"
+                            aria-hidden="true"
+                        >
+                            1️⃣
+                        </span>
+
+                        <span>
+                            <strong>NUNCA</strong>
+                            envie dinheiro por pedido no WhatsApp sem ligar para a pessoa antes.
+                        </span>
+
                     </li>
+
+
                     <li class="p-4 bg-white rounded-xl border border-amber-300 shadow-sm flex items-start gap-3">
-                        <span class="text-2xl" aria-hidden="true">2️⃣</span>
-                        <span><strong>NUNCA</strong> passe senhas ou códigos recebidos por SMS para ninguém.</span>
+
+                        <span
+                            class="text-2xl"
+                            aria-hidden="true"
+                        >
+                            2️⃣
+                        </span>
+
+                        <span>
+                            <strong>NUNCA</strong>
+                            passe senhas ou códigos recebidos por SMS para ninguém.
+                        </span>
+
                     </li>
+
+
                     <li class="p-4 bg-white rounded-xl border border-amber-300 shadow-sm flex items-start gap-3">
-                        <span class="text-2xl" aria-hidden="true">3️⃣</span>
-                        <span><strong>DESCONFIAR</strong> de prêmios, sorteios ou facilidades exageradas na internet.</span>
+
+                        <span
+                            class="text-2xl"
+                            aria-hidden="true"
+                        >
+                            3️⃣
+                        </span>
+
+                        <span>
+                            <strong>DESCONFIAR</strong>
+                            de prêmios, sorteios ou facilidades exageradas na internet.
+                        </span>
+
                     </li>
+
                 </ul>
+
             </section>
 
-            <!-- Detailed Topics Accordions -->
-            <section id="dicas-principais" class="space-y-6">
+
+            <!-- ==========================================
+                 DICAS DETALHADAS
+                 ========================================== -->
+
+            <section
+                id="dicas-principais"
+                class="space-y-6"
+            >
+
                 <h3 class="text-2xl font-extrabold flex items-center gap-2">
-                    <span>📚</span> Dicas Detalhadas de Proteção
+
+                    <span>📚</span>
+
+                    Dicas Detalhadas de Proteção
+
                 </h3>
 
-                <!-- Category 1: WhatsApp -->
-                <div id="whatsapp" class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm">
+
+                <!-- WHATSAPP -->
+
+                <div
+                    id="whatsapp"
+                    class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm"
+                >
+
                     <details open class="group">
+
                         <summary class="text-xl flex items-center justify-between">
+
                             <span class="flex items-center gap-3">
-                                <span class="text-3xl" aria-hidden="true">💬</span>
-                                <span>Como se proteger de Golpes no WhatsApp</span>
+
+                                <span
+                                    class="text-3xl"
+                                    aria-hidden="true"
+                                >
+                                    💬
+                                </span>
+
+                                <span>
+                                    Como se proteger de Golpes no WhatsApp
+                                </span>
+
                             </span>
-                            <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
+
+
+                            <span
+                                class="text-2xl group-open:rotate-180 transition-transform"
+                                aria-hidden="true"
+                            >
+                                ▼
+                            </span>
+
                         </summary>
+
+
                         <div class="p-6 space-y-4 border-t border-slate-200">
+
                             <div class="p-4 rounded-xl border-l-8 border-red-500 bg-red-50 text-slate-900 space-y-2">
-                                <h4 class="font-bold text-lg text-red-900">Como funciona o golpe do "Falso Parente":</h4>
-                                <p>Um criminoso usa a foto de um filho ou neto seu com um número desconhecido e manda mensagem dizendo: <em>"Mudei de número, me adiciona!"</em>. Pouco depois, pede dinheiro urgente para pagar uma conta.</p>
+
+                                <h4 class="font-bold text-lg text-red-900">
+                                    Como funciona o golpe do "Falso Parente":
+                                </h4>
+
+                                <p>
+                                    Um criminoso usa a foto de um filho ou neto seu com um número desconhecido e manda mensagem dizendo:
+                                    <em>"Mudei de número, me adiciona!"</em>.
+                                    Pouco depois, pede dinheiro urgente para pagar uma conta.
+                                </p>
+
                             </div>
 
-                            <h4 class="font-bold text-lg pt-2">O que você deve fazer:</h4>
+
+                            <h4 class="font-bold text-lg pt-2">
+                                O que você deve fazer:
+                            </h4>
+
+
                             <ol class="list-decimal list-inside space-y-3 pl-2">
-                                <li><strong>Ligue imediatamente:</strong> Não faça Pix nem transferências. Ligue no número antigo da pessoa para confirmar.</li>
-                                <li><strong>Aative a "Confirmação em Duas Etapas":</strong> Vá no WhatsApp em <em>Configurações ➔ Conta ➔ Confirmação em duas etapas</em> e crie uma senha.</li>
-                                <li><strong>Proteja sua foto de perfil:</strong> Defina para que apenas seus contatos vejam sua foto de perfil.</li>
+
+                                <li>
+                                    <strong>Ligue imediatamente:</strong>
+                                    Não faça Pix nem transferências. Ligue no número antigo da pessoa para confirmar.
+                                </li>
+
+                                <li>
+                                    <strong>Ative a "Confirmação em Duas Etapas":</strong>
+                                    Vá no WhatsApp em
+                                    <em>Configurações ➔ Conta ➔ Confirmação em duas etapas</em>
+                                    e crie uma senha.
+                                </li>
+
+                                <li>
+                                    <strong>Proteja sua foto de perfil:</strong>
+                                    Defina para que apenas seus contatos vejam sua foto de perfil.
+                                </li>
+
                             </ol>
+
                         </div>
+
                     </details>
+
                 </div>
 
-                <!-- Category 2: Pix & Banking -->
-                <div id="bancos" class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm">
+
+                <!-- PIX E BANCOS -->
+
+                <div
+                    id="bancos"
+                    class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm"
+                >
+
                     <details class="group">
+
                         <summary class="text-xl flex items-center justify-between">
+
                             <span class="flex items-center gap-3">
-                                <span class="text-3xl" aria-hidden="true">🏦</span>
-                                <span>Uso Seguro do Pix e Aplicativos de Banco</span>
+
+                                <span
+                                    class="text-3xl"
+                                    aria-hidden="true"
+                                >
+                                    🏦
+                                </span>
+
+                                <span>
+                                    Uso Seguro do Pix e Aplicativos de Banco
+                                </span>
+
                             </span>
-                            <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
+
+
+                            <span
+                                class="text-2xl group-open:rotate-180 transition-transform"
+                                aria-hidden="true"
+                            >
+                                ▼
+                            </span>
+
                         </summary>
+
+
                         <div class="p-6 space-y-4 border-t border-slate-200">
-                            <p class="text-lg">O Pix é seguro, mas é preciso tomar alguns cuidados simples na hora de pagar ou transferir.</p>
-                            
+
+                            <p class="text-lg">
+                                O Pix é seguro, mas é preciso tomar alguns cuidados simples na hora de pagar ou transferir.
+                            </p>
+
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                                 <div class="p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-slate-900 space-y-2">
-                                    <h5 class="font-bold text-emerald-900 text-lg">✅ Antes de confirmar o Pix:</h5>
+
+                                    <h5 class="font-bold text-emerald-900 text-lg">
+                                        ✅ Antes de confirmar o Pix:
+                                    </h5>
+
                                     <ul class="list-disc list-inside space-y-1">
-                                        <li>Leia o nome da pessoa que vai receber na tela.</li>
-                                        <li>Confira o valor com atenção antes de digitar a senha.</li>
-                                        <li>Cuidado com chaves Pix enviadas por pessoas desconhecidas.</li>
+
+                                        <li>
+                                            Leia o nome da pessoa que vai receber na tela.
+                                        </li>
+
+                                        <li>
+                                            Confira o valor com atenção antes de digitar a senha.
+                                        </li>
+
+                                        <li>
+                                            Cuidado com chaves Pix enviadas por pessoas desconhecidas.
+                                        </li>
+
                                     </ul>
+
                                 </div>
+
+
                                 <div class="p-4 rounded-xl border-2 border-red-500 bg-red-50 text-slate-900 space-y-2">
-                                    <h5 class="font-bold text-red-900 text-lg">❌ O Banco NUNCA faz isso:</h5>
+
+                                    <h5 class="font-bold text-red-900 text-lg">
+                                        ❌ O Banco NUNCA faz isso:
+                                    </h5>
+
                                     <ul class="list-disc list-inside space-y-1">
-                                        <li>Nenhum funcionário liga pedindo sua senha.</li>
-                                        <li>Nenhum banco pede para fazer Pix de "teste".</li>
-                                        <li>Nenhum banco pede para instalar programas no seu celular.</li>
+
+                                        <li>
+                                            Nenhum funcionário liga pedindo sua senha.
+                                        </li>
+
+                                        <li>
+                                            Nenhum banco pede para fazer Pix de "teste".
+                                        </li>
+
+                                        <li>
+                                            Nenhum banco pede para instalar programas no seu celular.
+                                        </li>
+
                                     </ul>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </details>
+
                 </div>
 
-                <!-- Category 3: Passwords -->
-                <div id="senhas" class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm">
+
+                <!-- SENHAS -->
+
+                <div
+                    id="senhas"
+                    class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm"
+                >
+
                     <details class="group">
+
                         <summary class="text-xl flex items-center justify-between">
+
                             <span class="flex items-center gap-3">
-                                <span class="text-3xl" aria-hidden="true">🔑</span>
-                                <span>Como Criar Senhas Fortes e Não Esquecer</span>
+
+                                <span
+                                    class="text-3xl"
+                                    aria-hidden="true"
+                                >
+                                    🔑
+                                </span>
+
+                                <span>
+                                    Como Criar Senhas Fortes e Não Esquecer
+                                </span>
+
                             </span>
-                            <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
+
+
+                            <span
+                                class="text-2xl group-open:rotate-180 transition-transform"
+                                aria-hidden="true"
+                            >
+                                ▼
+                            </span>
+
                         </summary>
+
+
                         <div class="p-6 space-y-4 border-t border-slate-200">
-                            <h4 class="font-bold text-lg">O segredo de uma senha segura:</h4>
-                            <p>Evite senhas fáceis como sua data de nascimento, "123456" ou o nome do seu cachorro.</p>
-                            
+
+                            <h4 class="font-bold text-lg">
+                                O segredo de uma senha segura:
+                            </h4>
+
+
+                            <p>
+                                Evite senhas fáceis como sua data de nascimento, "123456" ou o nome do seu cachorro.
+                            </p>
+
+
                             <div class="p-4 rounded-xl bg-blue-50 border-2 border-blue-300 text-slate-900 space-y-2">
-                                <h5 class="font-bold text-blue-900">💡 Dica de Ouro: Use frases simples!</h5>
-                                <p>Em vez de usar apenas uma palavra, invente uma frase pequena que você gosta. Por exemplo:</p>
+
+                                <h5 class="font-bold text-blue-900">
+                                    💡 Dica de Ouro: Use frases simples!
+                                </h5>
+
+
+                                <p>
+                                    Em vez de usar apenas uma palavra, invente uma frase pequena que você gosta. Por exemplo:
+                                </p>
+
+
                                 <p class="text-xl font-mono font-bold bg-white p-2 rounded border border-blue-200 text-center">
                                     EuAmoCafeComLeite#2026
                                 </p>
-                                <p class="text-sm">Essa senha é extremamente forte e fácil de lembrar!</p>
+
+
+                                <p class="text-sm">
+                                    Essa senha é extremamente forte e fácil de lembrar!
+                                </p>
+
                             </div>
 
-                            <p><strong>Caderno de Senhas:</strong> Se preferir anotar suas senhas em um caderno em casa, guarde-o em um local seguro e nunca leve o caderno dentro da bolsa na rua.</p>
+
+                            <p>
+                                <strong>Caderno de Senhas:</strong>
+                                Se preferir anotar suas senhas em um caderno em casa, guarde-o em um local seguro e nunca leve o caderno dentro da bolsa na rua.
+                            </p>
+
                         </div>
+
                     </details>
+
                 </div>
 
-                <!-- Category 4: Online Shopping -->
-                <div id="compras" class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm">
+
+                <!-- COMPRAS ONLINE -->
+
+                <div
+                    id="compras"
+                    class="cartao-personalizado rounded-2xl overflow-hidden shadow-sm"
+                >
+
                     <details class="group">
+
                         <summary class="text-xl flex items-center justify-between">
+
                             <span class="flex items-center gap-3">
-                                <span class="text-3xl" aria-hidden="true">🛍️</span>
-                                <span>Compras Online e Links Suspeitos</span>
+
+                                <span
+                                    class="text-3xl"
+                                    aria-hidden="true"
+                                >
+                                    🛍️
+                                </span>
+
+                                <span>
+                                    Compras Online e Links Suspeitos
+                                </span>
+
                             </span>
-                            <span class="text-2xl group-open:rotate-180 transition-transform" aria-hidden="true">▼</span>
+
+
+                            <span
+                                class="text-2xl group-open:rotate-180 transition-transform"
+                                aria-hidden="true"
+                            >
+                                ▼
+                            </span>
+
                         </summary>
+
+
                         <div class="p-6 space-y-4 border-t border-slate-200">
-                            <p class="text-lg">Fazer compras pela internet é muito prático, mas atente-se a estas dicas:</p>
+
+                            <p class="text-lg">
+                                Fazer compras pela internet é muito prático, mas atente-se a estas dicas:
+                            </p>
+
+
                             <ul class="list-disc list-inside space-y-3">
-                                <li><strong>Preços muito baixos:</strong> Se uma televisão que custa R$ 2.000 está sendo vendida por R$ 200, é golpe.</li>
-                                <li><strong>Cadeado na barra de endereço:</strong> Verifique se existe o desenho de um cadeado no topo da tela do navegador antes de digitar dados do cartão.</li>
-                                <li><strong>Opte por Cartão Virtual:</strong> Nos aplicativos de banco, crie um "Cartão Virtual" para fazer compras na internet. É mais seguro!</li>
+
+                                <li>
+                                    <strong>Preços muito baixos:</strong>
+                                    Se uma televisão que custa R$ 2.000 está sendo vendida por R$ 200, é golpe.
+                                </li>
+
+                                <li>
+                                    <strong>Cadeado na barra de endereço:</strong>
+                                    Verifique se existe o desenho de um cadeado no topo da tela do navegador antes de digitar dados do cartão.
+                                </li>
+
+                                <li>
+                                    <strong>Opte por Cartão Virtual:</strong>
+                                    Nos aplicativos de banco, crie um "Cartão Virtual" para fazer compras na internet. É mais seguro!
+                                </li>
+
                             </ul>
+
                         </div>
+
                     </details>
+
                 </div>
+
             </section>
 
-            <!-- Interactive Safety Checklist -->
-            <section id="checklist" class="cartao-personalizado p-6 md:p-8 rounded-2xl space-y-6 shadow-sm">
+
+            <!-- ==========================================
+                 CHECKLIST
+                 ========================================== -->
+
+            <section
+                id="checklist"
+                class="cartao-personalizado p-6 md:p-8 rounded-2xl space-y-6 shadow-sm"
+            >
+
                 <div class="border-b-2 border-slate-200 pb-4">
+
                     <h3 class="text-2xl font-extrabold flex items-center gap-2">
-                        <span>✅</span> Checklist do Uso Seguro do Celular
+
+                        <span>✅</span>
+
+                        Checklist do Uso Seguro do Celular
+
                     </h3>
+
+
                     <p class="opacity-90 pt-1">
                         Marque as caixas abaixo para testar como está sua proteção no dia a dia:
                     </p>
+
                 </div>
+
 
                 <div class="space-y-4">
-                    <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
-                        <input type="checkbox" class="w-7 h-7 text-blue-600 rounded mt-1">
-                        <span class="text-lg">Tenho senha de bloqueio para abrir a tela inicial do meu celular.</span>
-                    </label>
 
                     <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
-                        <input type="checkbox" class="w-7 h-7 text-blue-600 rounded mt-1">
-                        <span class="text-lg">Ativei a verificação em duas etapas na minha conta do WhatsApp.</span>
+
+                        <input
+                            type="checkbox"
+                            class="w-7 h-7 text-blue-600 rounded mt-1"
+                        >
+
+                        <span class="text-lg">
+                            Tenho senha de bloqueio para abrir a tela inicial do meu celular.
+                        </span>
+
                     </label>
 
-                    <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
-                        <input type="checkbox" class="w-7 h-7 text-blue-600 rounded mt-1">
-                        <span class="text-lg">Nunca clico em links recebidos por mensagem de números desconhecidos.</span>
-                    </label>
 
                     <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
-                        <input type="checkbox" class="w-7 h-7 text-blue-600 rounded mt-1">
-                        <span class="text-lg">Ligo diretamente para o meu parente se ele pedir dinheiro por um número novo.</span>
+
+                        <input
+                            type="checkbox"
+                            class="w-7 h-7 text-blue-600 rounded mt-1"
+                        >
+
+                        <span class="text-lg">
+                            Ativei a verificação em duas etapas na minha conta do WhatsApp.
+                        </span>
+
                     </label>
+
+
+                    <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
+
+                        <input
+                            type="checkbox"
+                            class="w-7 h-7 text-blue-600 rounded mt-1"
+                        >
+
+                        <span class="text-lg">
+                            Nunca clico em links recebidos por mensagem de números desconhecidos.
+                        </span>
+
+                    </label>
+
+
+                    <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 cursor-pointer transition-colors min-h-[64px]">
+
+                        <input
+                            type="checkbox"
+                            class="w-7 h-7 text-blue-600 rounded mt-1"
+                        >
+
+                        <span class="text-lg">
+                            Ligo diretamente para o meu parente se ele pedir dinheiro por um número novo.
+                        </span>
+
+                    </label>
+
                 </div>
+
             </section>
 
-            <!-- Emergency and Support Info -->
-            <section id="ajuda-emergencia" class="cartao-personalizado p-2 rounded-2xl border-2 border-red-300 bg-red-50 text-slate-900 shadow-sm transition-all duration-300">
+
+            <!-- ==========================================
+                 AJUDA DE EMERGÊNCIA
+                 ========================================== -->
+
+            <section
+                id="ajuda-emergencia"
+                class="cartao-personalizado p-2 rounded-2xl border-2 border-red-300 bg-red-50 text-slate-900 shadow-sm transition-all duration-300"
+            >
+
                 <div class="caixa-sos bg-white p-6 md:p-8 rounded-xl space-y-6">
-                    <!-- Cabeçalho com Botão Sair -->
+
+
+                    <!-- CABEÇALHO -->
+
                     <div class="flex flex-wrap items-center justify-between gap-4 border-b-2 border-red-200 pb-4">
+
                         <h3 class="text-2xl md:text-3xl font-extrabold text-red-600 flex items-center gap-3">
-                            <span class="text-4xl" aria-hidden="true">🆘</span> 
-                            <span>Caiu em um golpe? Saiba o que fazer imediatamente:</span>
+
+                            <span
+                                class="text-4xl"
+                                aria-hidden="true"
+                            >
+                                🆘
+                            </span>
+
+                            <span>
+                                Caiu em um golpe? Saiba o que fazer imediatamente:
+                            </span>
+
                         </h3>
-                        <!-- Botão Sair Principal -->
-                        <a href="#" class="px-5 py-3 rounded-xl bg-slate-900 text-white font-extrabold hover:bg-slate-800 min-h-[50px] flex items-center gap-2 text-lg shadow-md transition-all border-2 border-slate-700" title="Fechar modo de emergência e voltar à página">
-                            <span aria-hidden="true">✖️</span> Sair
+
+
+                        <a
+                            href="#"
+                            class="px-5 py-3 rounded-xl bg-slate-900 text-white font-extrabold hover:bg-slate-800 min-h-[50px] flex items-center gap-2 text-lg shadow-md transition-all border-2 border-slate-700"
+                            title="Fechar ajuda"
+                        >
+                            <span aria-hidden="true">✖️</span>
+                            Sair
                         </a>
+
                     </div>
+
+
+                    <!-- PASSOS -->
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                        <div class="p-5 bg-red-50 rounded-xl border-2 border-red-200 space-y-2">
-                            <div class="font-extrabold text-xl text-red-900">1. Avise seu Banco</div>
-                            <p class="text-base pt-1">Ligue no número oficial atrás do seu cartão e peça o bloqueio imediato do Pix ou cartão.</p>
-                        </div>
 
                         <div class="p-5 bg-red-50 rounded-xl border-2 border-red-200 space-y-2">
-                            <div class="font-extrabold text-xl text-red-900">2. Faça um B.O.</div>
-                            <p class="text-base pt-1">Procure a Polícia Civil mais próxima ou faça um Boletim de Ocorrência online (Disque 190 para emergências).</p>
+
+                            <div class="font-extrabold text-xl text-red-900">
+                                1. Avise seu Banco
+                            </div>
+
+                            <p class="text-base pt-1">
+                                Ligue no número oficial atrás do seu cartão e peça o bloqueio imediato do Pix ou cartão.
+                            </p>
+
                         </div>
 
+
                         <div class="p-5 bg-red-50 rounded-xl border-2 border-red-200 space-y-2">
-                            <div class="font-extrabold text-xl text-red-900">3. Avise Familiares</div>
-                            <p class="text-base pt-1">Avise seus contatos para que eles não respondam a mensagens vindas em seu nome.</p>
+
+                            <div class="font-extrabold text-xl text-red-900">
+                                2. Faça um B.O.
+                            </div>
+
+                            <p class="text-base pt-1">
+                                Procure a Polícia Civil mais próxima ou faça um Boletim de Ocorrência online (Disque 190 para emergências).
+                            </p>
+
                         </div>
+
+
+                        <div class="p-5 bg-red-50 rounded-xl border-2 border-red-200 space-y-2">
+
+                            <div class="font-extrabold text-xl text-red-900">
+                                3. Avise Familiares
+                            </div>
+
+                            <p class="text-base pt-1">
+                                Avise seus contatos para que eles não respondam a mensagens vindas em seu nome.
+                            </p>
+
+                        </div>
+
                     </div>
 
-                    <!-- Rodapé do Modal com Botão de Sair -->
+
+                    <!-- RODAPÉ -->
+
                     <div class="pt-4 border-t border-slate-200 flex justify-end">
-                        <a href="#" class="px-6 py-3 rounded-xl bg-red-600 text-white font-extrabold hover:bg-red-700 min-h-[50px] flex items-center gap-2 text-lg shadow-md transition-all">
-                            <span aria-hidden="true">✖️</span> Fechar / Sair da Ajuda
+
+                        <a
+                            href="#"
+                            class="px-6 py-3 rounded-xl bg-red-600 text-white font-extrabold hover:bg-red-700 min-h-[50px] flex items-center gap-2 text-lg shadow-md transition-all"
+                        >
+                            <span aria-hidden="true">✖️</span>
+                            Fechar / Sair da Ajuda
                         </a>
+
                     </div>
+
                 </div>
+
             </section>
 
         </main>
 
-        <!-- Footer -->
-        <footer class="cartao-personalizado border-b-0 border-x-0 mt-12 py-8 px-4 text-center space-y-4">
+
+        <!-- ==========================================
+             RODAPÉ
+             ========================================== -->
+
+        <footer
+            class="cartao-personalizado border-b-0 border-x-0 mt-12 py-8 px-4 text-center space-y-4"
+        >
+
             <div class="max-w-6xl mx-auto space-y-4">
+
                 <p class="text-lg font-bold">
                     Guia Acessível de Segurança Digital para a Terceira Idade
                 </p>
+
+
                 <p class="text-sm opacity-80">
                     Construído pensando em facilidade de leitura, alto contraste e uso intuitivo.
                 </p>
+
+
                 <div>
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-slate-500 font-bold hover:bg-slate-200 transition-colors min-h-[48px]">
-                        <span>⬆️</span> Voltar ao topo da página
+
+                    <a
+                        href="#"
+                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-slate-500 font-bold hover:bg-slate-200 transition-colors min-h-[48px]"
+                    >
+                        <span>⬆️</span>
+                        Voltar ao topo da página
                     </a>
+
                 </div>
+
             </div>
+
         </footer>
 
     </div>
-    <script srp-"script.js"></script>
 
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
