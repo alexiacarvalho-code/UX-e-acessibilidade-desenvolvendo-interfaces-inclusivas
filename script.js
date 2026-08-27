@@ -13,3 +13,25 @@ function abreModal() {
 function fechaModal() {
     modal.style.display = "none";
 }
+
+// TAMANHO DE FONTES
+let tamanhoFonteAtual = 16;
+const valorAdicionado = 2;
+const valorSubtraido = 2;
+let btnTamanhoNormal = document.getElementById("btnTamanhoNormal");
+let btnAumentaFonte = document.getElementById("btnAumentaTexto");
+let btnDiminuiFonte = document.getElementById("btndiminuiTexto");
+
+btnAumentaFonte.addEventListener("click", tamanoNormal);
+btnDiminuiFonte.addEventListener("click", aumentaFonte);
+btnAumentaFonte.addEventListener("click", diminuiFonte);
+
+function aumentaFonte() {
+    tamanhoFonteAtual = tamanhoFonteAtual + valorAdicionado;
+    document.documentElement.style.fontSize = `${tamanhoFonteAtual}px`;
+}
+
+function diminuiFonte() {
+    tamanhoFonteAtual = tamanhoFonteAtual - valorSubtraido;
+    document.documentElement.style.fontSize = `${tamanhoFonteAtual}px`;
+}
