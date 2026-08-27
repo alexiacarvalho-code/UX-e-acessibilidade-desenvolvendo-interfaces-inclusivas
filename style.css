@@ -1,4 +1,4 @@
-        /* Base Accessibility and CSS variable toggles without JavaScript */
+         /* Base Accessibility and CSS variable toggles without JavaScript */
         :root {
             --font-scale: 1rem;
             --bg-color: #F8FAFC;
@@ -107,16 +107,41 @@
             scroll-behavior: smooth;
         }
 
-        .modal-fundo {
+        /* Estado de destaque da seção SOS ao ser acionada (:target) */
+        #ajuda-emergencia:target {
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            backdrop-filter: blur(6px);
         }
 
-        ol {
-            padding: 48px;
+        #ajuda-emergencia:target .caixa-sos {
+            max-width: 52rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 4px solid #DC2626;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            animation: surgirSOS 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+         surgirSOS {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
